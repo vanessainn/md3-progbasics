@@ -14,21 +14,26 @@
 
 // }
 
+function start() {
 
+    let anzahl = document.getElementById('anzahl').value;
 
-let imageArray = ['images/monday.jpg', 'images/tuesday.jpg', 'images/wednesday.jpg', 'images/thursday.jpg', 'images/friday.jpg', 'images/saturday.jpg', 'images/sunday.jpg'];
-let titleArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-let descriptionArray = ['50% auf alle nicht-alkoholischen Getraenke', '10% auf alle alkoholischen Getraenke', '30% auf alle Barilla Produkte', '20% auf Coca Cola', 'Nimm zwei, zahl eins - auf alle Bio Produkte', '60% auf alle vegane Produkte', '5% auf ALLES!'];
+    let imageArray = ['images/monday.jpg', 'images/tuesday.jpg', 'images/wednesday.jpg', 'images/thursday.jpg', 'images/friday.jpg', 'images/saturday.jpg', 'images/sunday.jpg'];
+    let titleArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    let descriptionArray = ['50% auf alle nicht-alkoholischen Getränke', '10% auf alle alkoholischen Getränke', '30% auf alle Barilla Produkte', '20% auf Coca Cola', 'Nimm zwei, zahl eins - auf alle Bio Produkte', '60% auf alle vegane Produkte', '5% auf ALLES!'];
 
-for (let i = 0; i <=2; i++) {
-    for (let i = 0; i <=6; i++) {
-    print_coupon(imageArray[i], titleArray[i], descriptionArray[i]);
+    for (let i = 0; i <=anzahl; i++) {
+        for (let i = 0; i <=6; i++) {
+        print_coupon(imageArray[i], titleArray[i], descriptionArray[i]);
+        }
     }
+
+    function print_coupon(image, title, description) {
+        document.write('<img src="' + image + '">');
+        document.write('<h1>' + title + '</h1>');
+        document.write('<p>' + description + '</p>');
+    }
+
 }
 
 
-function print_coupon(image, title, description) {
-    document.write('<img src="' + image + '">');
-    document.write('<h1>' + title + '</h1>');
-    document.write('<p>' + description + '</p>');
-}
