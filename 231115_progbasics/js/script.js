@@ -15,11 +15,10 @@ function start() {
     }
 
     function print_coupon(image, title, description) {
-        document.write('<img src="' + image + '">');
-        document.write('<h1>' + title + '</h1>');
-        document.write('<p>' + description + '</p>');
+        document.write('<img id="image" src="' + image + '">');
+        document.write('<h1 id="title">' + title + '</h1>');
+        document.write('<p id="description">' + description + '</p>');
     }
-
 }
 
 
