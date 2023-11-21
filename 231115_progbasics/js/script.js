@@ -8,16 +8,34 @@ function start() {
     let titleArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     let descriptionArray = ['50% auf alle nicht-alkoholischen Getränke', '10% auf alle alkoholischen Getränke', '30% auf alle Barilla Produkte', '20% auf Coca Cola', 'Nimm zwei, zahl eins - auf alle Bio Produkte', '60% auf alle vegane Produkte', '5% auf ALLES!'];
 
-    for (let i = 1; i <=anzahl; i++) {
+    for (let i = 1; i <= anzahl; i++) {
         for (let i = 0; i <=6; i++) {
         print_coupon(imageArray[i], titleArray[i], descriptionArray[i]);
         }
     }
 
     function print_coupon(image, title, description) {
-        document.write('<img id="image" src="' + image + '">');
-        document.write('<h1 id="title">' + title + '</h1>');
-        document.write('<p id="description">' + description + '</p>');
+        let couponContainer = document.createElement('div');
+        couponContainer.classList.add('container');
+
+        let imageElement = document.createElement('img');
+        imageElement.src = image;
+        couponContainer.appendChild(imageElement);
+
+        let containerText = document.createElement('div');
+        containerText.classList.add('container__text');
+
+        let titleElement = document.createElement('h2');
+        titleElement.innerHTML = title;
+        containerText.appendChild(titleElement);
+
+        let descriptionElement = document.createElement('p');
+        descriptionElement.innerHTML = description;
+        containerText.appendChild(descriptionElement);
+
+        couponContainer.appendChild(containerText);
+
+        document.body.appendChild(couponContainer);
     }
 }
 
